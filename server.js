@@ -264,16 +264,16 @@ var SampleApp = function() {
      */
     self.start = function() {
         //  Start the app on the specific interface (and port).
-        var privateKey = fs.readFileSync(__dirname + '/ssl/key.pem').toString();
-        var certificate = fs.readFileSync(__dirname + '/ssl/cert.pem').toString();
+        //var privateKey = fs.readFileSync(__dirname + '/ssl/key.pem').toString();
+        //var certificate = fs.readFileSync(__dirname + '/ssl/cert.pem').toString();
 
         // openssl req -newkey rsa:2048 -new -nodes -keyout key.pem -out csr.pem
         // 
         
-        var options = {
-          key: privateKey,
-          cert: certificate
-        };
+        //var options = {
+        //  key: privateKey,
+        //  cert: certificate
+        //};
 
         //https.createServer(options, self.app).listen(self.port, function() {
         self.app.listen(self.port, function() {
