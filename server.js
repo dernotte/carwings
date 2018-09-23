@@ -193,16 +193,16 @@ var SampleApp = function() {
     };
 
     self.setFan = async function(command, username, password) {
-//console.log("setFan: " + command);
+console.log("setFan: " + command);
         let nc = new NissanConnect(username, password, NissanConnect.Region.Canada);
         let api = nc.api.ac;
-        const key = await nc.request(api, api.requestOn);
+        const res = (command == 'on')? (await nc.request(api, api.requestOn)) : (await nc.request(api, api.requestOff));
       
-        let res = (command == 'on')? (await nc.api.ac.requestOnResult(nc.leaf, nc.customerInfo, key)) : (nc.api.ac.requestOffResult(nc.leaf, nc.customerInfo, key));
+        //let res = (command == 'on')? (await nc.api.ac.requestOnResult(nc.leaf, nc.customerInfo, key)) : (nc.api.ac.requestOffResult(nc.leaf, nc.customerInfo, key));
 //console.dir(res);
 //console.log(typeof res);
 //console.log(res instanceof Promise);
-        if (((res instanceof Promise) == false) &&  (res != null) && (res.info.hvacStatus.toLowerCase() !== command)) {
+        if (res == null) {
             throw new Error(JSON.stringify(res.info));
         }
     };
