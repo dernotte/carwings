@@ -1,11 +1,11 @@
 #!/bin/env node
 //  OpenShift sample Node application
 var express = require('express');
-var fs      = require('fs');
-var https = require('https');
+//var fs      = require('fs');
+//var https = require('https');
 var http = require('http');
-var querystring = require('querystring');
-var request = require('request');
+//var querystring = require('querystring');
+//var request = require('request');
 const NissanConnect = require('@beejjacobs/nissan-connect').NissanConnect;
 
 /**
