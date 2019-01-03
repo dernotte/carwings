@@ -6,7 +6,9 @@ var express = require('express');
 var http = require('http');
 //var querystring = require('querystring');
 //var request = require('request');
-const NissanConnect = require('@beejjacobs/nissan-connect').NissanConnect;
+//const NissanConnect = require('@beejjacobs/nissan-connect').NissanConnect;
+
+const NissanConnect = require('./nissanConnect');
 
 /**
  *  Define the sample application.
